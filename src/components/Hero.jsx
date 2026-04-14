@@ -38,7 +38,7 @@ export default function Hero() {
           className="hero-title"
           variants={itemVariants}
         >
-          <span className="highlight">Platform & Data</span> Engineer
+          <span className="highlight">AI & Data </span> Platform Engineer
         </motion.h1>
 
         <motion.p 
