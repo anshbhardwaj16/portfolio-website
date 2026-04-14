@@ -1,6 +1,10 @@
 import { motion } from 'framer-motion'
 import './Contact.css'
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
+
+// Initialize EmailJS with your public key
+emailjs.init('FkslP-HMqnpC1XlhJ')
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -8,6 +12,8 @@ export default function Contact() {
     email: '',
     message: ''
   })
+  const [isLoading, setIsLoading] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null)
 
   const handleChange = (e) => {
     setFormData({
@@ -16,11 +22,36 @@ export default function Contact() {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    alert('Thank you for your message! I will get back to you soon.')
-    setFormData({ name: '', email: '', message: '' })
+    setIsLoading(true)
+    setSubmitStatus(null)
+
+    try {
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        'service_zj9teum', // Replace with your EmailJS service ID
+        'template_vq3nn7g', // Replace with your EmailJS template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          reply_to: formData.email
+        }
+      )
+
+      if (result.status === 200) {
+        setSubmitStatus('success')
+        alert('Thank you for your message! I will get back to you soon.')
+        setFormData({ name: '', email: '', message: '' })
+      }
+    } catch (error) {
+      console.error('Email sending error:', error)
+      setSubmitStatus('error')
+      alert('Failed to send message. Please try again.')
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   const containerVariants = {
