@@ -110,17 +110,6 @@ export default function Projects() {
                   </motion.span>
                 ))}
               </div>
-
-              <motion.button 
-                className="view-btn"
-                whileHover={{ 
-                  scale: 1.05,
-                  backgroundColor: 'rgba(255, 107, 107, 0.2)'
-                }}
-                whileTap={{ scale: 0.95 }}
-              >
-                View Project →
-              </motion.button>
             </motion.div>
           ))}
         </motion.div>
