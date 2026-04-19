@@ -9,7 +9,7 @@ const skillCategories = [
   },
   {
     category: 'Automation & CI/CD',
-    skills: ['GitHub Actions', 'Docker', 'Docker Compose', 'Containerization', 'Pipeline Automation', 'IaC'],
+    skills: ['GitHub Actions', 'Docker', 'Docker Compose', 'Containerization', 'Pipeline Automation'],
     icon: '🚀'
   },
   {
@@ -95,7 +95,7 @@ export default function Skills() {
                     variants={skillVariants}
                     whileHover={{ 
                       scale: 1.1,
-                      boxShadow: '0 8px 20px rgba(255, 107, 107, 0.3)'
+                      boxShadow: '0 10px 24px hsl(var(--accent-hue) 92% 68% / 0.24)'
                     }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -139,16 +139,29 @@ export default function Skills() {
               transition={{ duration: 1.5, delay: 0.3 }}
             ></motion.div>
           </motion.div>
-
-          <motion.div className="skill-level" variants={categoryVariants}>
+           <motion.div className="skill-level" variants={categoryVariants}>
             <div className="level-label">
-              <span>Docker & GitHub Actions</span>
+              <span>Gen AI Copilot Studio and MS PowerAutomate </span>
               <span>85%</span>
             </div>
             <motion.div 
               className="progress-bar"
               initial={{ width: 0 }}
               whileInView={{ width: '85%' }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.5, delay: 0.3 }}
+            ></motion.div>
+          </motion.div>
+
+          <motion.div className="skill-level" variants={categoryVariants}>
+            <div className="level-label">
+              <span>Docker & GitHub Actions</span>
+              <span>83%</span>
+            </div>
+            <motion.div 
+              className="progress-bar"
+              initial={{ width: 0 }}
+              whileInView={{ width: '83%' }}
               viewport={{ once: true }}
               transition={{ duration: 1.5, delay: 0.4 }}
             ></motion.div>

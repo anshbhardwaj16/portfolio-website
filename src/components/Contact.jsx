@@ -165,7 +165,7 @@ export default function Contact() {
               variants={itemVariants}
               whileHover={{ 
                 scale: 1.05,
-                boxShadow: '0 10px 30px rgba(255, 107, 107, 0.4)'
+                boxShadow: '0 16px 34px hsl(var(--accent-hue) 92% 68% / 0.26)'
               }}
               whileTap={{ scale: 0.95 }}
             >

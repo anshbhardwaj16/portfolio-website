@@ -3,9 +3,9 @@
   top: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(15, 12, 41, 0.8);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 107, 107, 0.2);
+  background: rgba(10, 16, 32, 0.68);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--accent-border);
   padding: 1rem 0;
 }
 
@@ -21,7 +21,7 @@
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
-  background: linear-gradient(135deg, #ff6b6b, #ff8e72);
+  background: var(--accent-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -36,7 +36,7 @@
 
 .nav-item {
   text-decoration: none;
-  color: #fff;
+  color: var(--text-primary);
   font-weight: 500;
   position: relative;
   transition: color 0.3s ease;
@@ -49,7 +49,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(135deg, #ff6b6b, #ff8e72);
+  background: var(--accent-gradient);
   transition: width 0.3s ease;
 }
 
@@ -69,7 +69,7 @@
 .menu-toggle span {
   width: 25px;
   height: 3px;
-  background: #ff6b6b;
+  background: var(--accent);
   border-radius: 2px;
   transition: all 0.3s ease;
 }
@@ -86,8 +86,8 @@
     width: 100%;
     flex-direction: column;
     gap: 0;
-    background: rgba(15, 12, 41, 0.95);
-    backdrop-filter: blur(10px);
+    background: rgba(8, 12, 24, 0.92);
+    backdrop-filter: blur(18px);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
@@ -99,6 +99,6 @@
 
   .nav-item {
     padding: 1rem 2rem;
-    border-bottom: 1px solid rgba(255, 107, 107, 0.1);
+    border-bottom: 1px solid var(--accent-border);
   }
 }

@@ -33,8 +33,8 @@ export default function Navigation() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ 
-                color: '#ff6b6b',
-                textShadow: '0 0 10px rgba(255, 107, 107, 0.5)'
+                color: 'var(--accent)',
+                textShadow: '0 0 12px hsl(var(--accent-hue) 92% 68% / 0.45)'
               }}
               onClick={() => setIsOpen(false)}
             >

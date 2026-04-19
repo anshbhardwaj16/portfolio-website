@@ -1,3 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --scroll-progress: 0;
+  --accent-hue: 12deg;
+  --accent-2-hue: 188deg;
+  --accent-3-hue: 320deg;
+  --bg-tilt: -12deg;
+  --glow-shift: 0px;
+  --bg-primary: hsl(230 31% 9%);
+  --bg-secondary: hsl(232 27% 12%);
+  --bg-elevated: rgba(17, 24, 39, 0.5);
+  --surface: rgba(255, 255, 255, 0.05);
+  --surface-strong: rgba(255, 255, 255, 0.09);
+  --surface-border: rgba(255, 255, 255, 0.11);
+  --text-primary: rgba(247, 248, 252, 0.98);
+  --text-secondary: rgba(214, 219, 235, 0.78);
+  --text-muted: rgba(194, 201, 221, 0.58);
+  --accent: hsl(var(--accent-hue) 92% 68%);
+  --accent-soft: hsl(var(--accent-hue) 86% 62% / 0.18);
+  --accent-border: hsl(var(--accent-hue) 90% 70% / 0.35);
+  --accent-2: hsl(var(--accent-2-hue) 88% 72%);
+  --accent-2-soft: hsl(var(--accent-2-hue) 90% 70% / 0.14);
+  --accent-3: hsl(var(--accent-3-hue) 84% 76%);
+  --accent-gradient: linear-gradient(135deg, var(--accent), var(--accent-2) 55%, var(--accent-3));
+  --accent-gradient-soft: linear-gradient(135deg, hsl(var(--accent-hue) 92% 68% / 0.22), hsl(var(--accent-2-hue) 88% 72% / 0.16), hsl(var(--accent-3-hue) 84% 76% / 0.18));
+  --shadow-accent: 0 18px 60px hsl(var(--accent-hue) 90% 60% / 0.18);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,15 +38,20 @@ html {
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
-  color: #fff;
+  font-family: 'Manrope', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.03), transparent 35%), linear-gradient(160deg, var(--bg-primary), var(--bg-secondary));
+  color: var(--text-primary);
   overflow-x: hidden;
   line-height: 1.6;
+  text-rendering: optimizeLegibility;
 }
 
 #root {
   min-height: 100vh;
+}
+
+a {
+  color: inherit;
 }
 
 /* Scrollbar */
@@ -26,14 +60,14 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.3);
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.5);
+  background: linear-gradient(180deg, var(--accent-2), var(--accent-3));
 }

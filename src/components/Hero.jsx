@@ -1,7 +1,47 @@
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import './Hero.css'
 
+const rotatingTitles = [
+  'AI & Data Platform Engineer',
+  'Building Scalable ML Systems',
+  'Turning Data Into Products',
+]
+
 export default function Hero() {
+  const [titleIndex, setTitleIndex] = useState(0)
+  const [displayText, setDisplayText] = useState('')
+  const [isDeleting, setIsDeleting] = useState(false)
+
+  useEffect(() => {
+    const currentTitle = rotatingTitles[titleIndex]
+    const typingDelay = isDeleting ? 35 : 75
+    const pauseDelay = isDeleting ? 900 : 1200
+
+    const timeout = window.setTimeout(() => {
+      if (!isDeleting) {
+        const nextText = currentTitle.slice(0, displayText.length + 1)
+        setDisplayText(nextText)
+
+        if (nextText === currentTitle) {
+          setIsDeleting(true)
+        }
+
+        return
+      }
+
+      const nextText = currentTitle.slice(0, displayText.length - 1)
+      setDisplayText(nextText)
+
+      if (nextText === '') {
+        setIsDeleting(false)
+        setTitleIndex((currentIndex) => (currentIndex + 1) % rotatingTitles.length)
+      }
+    }, displayText === currentTitle || displayText === '' ? pauseDelay : typingDelay)
+
+    return () => window.clearTimeout(timeout)
+  }, [displayText, isDeleting, titleIndex])
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -38,7 +78,10 @@ export default function Hero() {
           className="hero-title"
           variants={itemVariants}
         >
-          <span className="highlight">AI & Data </span> Platform Engineer
+          <span className="hero-title-line">
+            <span className="highlight hero-type-text">{displayText}</span>
+            <span className="hero-cursor" aria-hidden="true"></span>
+          </span>
         </motion.h1>
 
         <motion.p 
@@ -54,7 +97,7 @@ export default function Hero() {
         >
           <motion.button 
             className="btn btn-primary"
-            whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(255, 107, 107, 0.5)' }}
+            whileHover={{ scale: 1.05, boxShadow: '0 0 24px hsl(var(--accent-hue) 92% 68% / 0.45)' }}
             whileTap={{ scale: 0.95 }}
             onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
           >
@@ -62,7 +105,7 @@ export default function Hero() {
           </motion.button>
           <motion.button 
             className="btn btn-secondary"
-            whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(158, 107, 255, 0.5)' }}
+            whileHover={{ scale: 1.05, boxShadow: '0 0 24px hsl(var(--accent-2-hue) 88% 72% / 0.35)' }}
             whileTap={{ scale: 0.95 }}
             onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
           >

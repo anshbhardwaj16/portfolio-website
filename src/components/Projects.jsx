@@ -92,7 +92,7 @@ export default function Projects() {
               variants={itemVariants}
               whileHover={{ 
                 y: -10,
-                boxShadow: '0 20px 40px rgba(255, 107, 107, 0.2)'
+                boxShadow: '0 24px 48px hsl(var(--accent-hue) 92% 68% / 0.18)'
               }}
             >
               <div className="project-icon">{project.icon}</div>
