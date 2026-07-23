@@ -4,70 +4,35 @@ import './Projects.css'
 const projects = [
   {
     id: 1,
-    title: 'Airflow DAG Orchestration at Scale',
-    description: 'Orchestrated ~800 production Airflow DAGs ensuring high availability, fault tolerance, and optimized execution across large-scale data platforms.',
-    tags: ['Apache Airflow', 'Data Orchestration', 'Production Systems'],
-    icon: '⚙️'
+    title: 'GenAI-Powered Airflow Auto-Healing Framework',
+    description:
+      'Designed an enterprise-grade Airflow auto-healing solution that uses LLMs to analyze failures, trigger intelligent recovery workflows, and retrigger DAGs. It reduced MTTR by 20% and saved 50+ engineering hours each month.',
+    tags: ['Apache Airflow', 'Python', 'Copilot Studio', 'Power Automate', 'REST APIs', 'ServiceNow', 'LLMs'],
+    icon: '01',
   },
   {
     id: 2,
-    title: 'AutoDAG Template Framework',
-    description: 'Developed reusable AutoDAG templates to standardize pipeline creation and accelerate onboarding of new workflows.',
-    tags: ['Airflow', 'Python', 'Template Framework'],
-    icon: '📋'
+    title: 'OmniSpark — Enterprise Agentic AI Platform',
+    description:
+      'Co-created a multi-LLM platform that automates the SDLC—from Jira story creation and backlog selection to branches, code, testing, reviews, pull requests, Jira updates, and LLM policy validation. Co-developed RAGENTS, a reusable AI-agent marketplace for VS Code.',
+    tags: ['Python', 'Multi-LLM', 'Jira REST APIs', 'Git', 'GitHub', 'VS Code Extension', 'Power Automate'],
+    icon: '02',
   },
-  {
-    id: 3,
-    title: 'GenAI Auto-Healing Platform',
-    description: 'Built an in-house GenAI-driven auto-healing framework using Copilot Studio and Power Automate to analyze failures and execute remediation scripts.',
-    tags: ['GenAI', 'Copilot Studio', 'Power Automate', 'Python'],
-    icon: '🤖'
-  },
-  {
-    id: 4,
-    title: 'Selenium Test Automation & CI/CD',
-    description: 'Automated Selenium test execution by containerizing with Docker and orchestrating runs via GitHub Actions, eliminating manual IDE execution.',
-    tags: ['Docker', 'GitHub Actions', 'Selenium', 'CI/CD'],
-    icon: '🧪'
-  },
-  {
-    id: 5,
-    title: 'DAG Failure Analysis & Remediation',
-    description: 'Intelligent DAG failure detection with automated remediation and re-trigger mechanisms, reducing manual intervention by ~20%.',
-    tags: ['Airflow', 'Automation', 'Reliability Engineering'],
-    icon: '🔧'
-  },
-  {
-    id: 6,
-    title: 'Cloud-Native Pipeline Infrastructure',
-    description: 'Designed and implemented cloud-native infrastructure for reliable, scalable data pipeline execution at enterprise scale.',
-    tags: ['Docker', 'Kubernetes', 'Cloud Architecture'],
-    icon: '☁️'
-  }
 ]
 
 export default function Projects() {
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
   }
 
   const itemVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 },
-    },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   }
 
   return (
-    <motion.section 
+    <motion.section
       id="projects"
       className="projects"
       initial="hidden"
@@ -77,51 +42,36 @@ export default function Projects() {
     >
       <div className="projects-container">
         <motion.div className="section-header" variants={itemVariants}>
-          <h2>Key Accomplishments</h2>
-          <p>Significant projects and initiatives showcasing platform engineering expertise</p>
+          <h2>Selected Projects</h2>
+          <p>Enterprise automation and agentic AI initiatives</p>
         </motion.div>
 
-        <motion.div 
-          className="projects-grid"
-          variants={containerVariants}
-        >
+        <motion.div className="projects-grid" variants={containerVariants}>
           {projects.map((project) => (
-            <motion.div 
+            <motion.article
               key={project.id}
               className="project-card"
               variants={itemVariants}
-              whileHover={{ 
-                y: -10,
-                boxShadow: '0 24px 48px hsl(var(--accent-hue) 92% 68% / 0.18)'
-              }}
+              whileHover={{ y: -10, boxShadow: '0 24px 48px hsl(var(--accent-hue) 92% 68% / 0.18)' }}
             >
               <div className="project-icon">{project.icon}</div>
               <h3>{project.title}</h3>
               <p>{project.description}</p>
-              
               <div className="project-tags">
                 {project.tags.map((tag) => (
-                  <motion.span 
-                    key={tag}
-                    className="tag"
-                    whileHover={{ scale: 1.1 }}
-                  >
+                  <motion.span key={tag} className="tag" whileHover={{ scale: 1.1 }}>
                     {tag}
                   </motion.span>
                 ))}
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </motion.div>
       </div>
 
-      {/* Background Animation */}
-      <motion.div 
+      <motion.div
         className="projects-bg"
-        animate={{ 
-          x: [0, 50, 0],
-          y: [0, -50, 0]
-        }}
+        animate={{ x: [0, 50, 0], y: [0, -50, 0] }}
         transition={{ repeat: Infinity, duration: 15 }}
       ></motion.div>
     </motion.section>

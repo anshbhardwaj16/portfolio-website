@@ -3,9 +3,9 @@ import { motion } from 'framer-motion'
 import './Hero.css'
 
 const rotatingTitles = [
-  'AI & Data Platform Engineer',
-  'Building Scalable ML Systems',
-  'Turning Data Into Products',
+  'Platform Engineer',
+  'Data Engineer',
+  'GenAI Automation Engineer',
 ]
 
 export default function Hero() {
@@ -46,24 +46,17 @@ export default function Hero() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
+      transition: { staggerChildren: 0.2, delayChildren: 0.3 },
     },
   }
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: 'easeOut' },
-    },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
   }
 
   return (
-    <motion.section 
+    <motion.section
       id="home"
       className="hero"
       variants={containerVariants}
@@ -74,92 +67,70 @@ export default function Hero() {
       <div className="hero-blob hero-blob-2"></div>
 
       <div className="hero-content">
-        <motion.h1 
-          className="hero-title"
-          variants={itemVariants}
-        >
+        <motion.p className="hero-eyebrow" variants={itemVariants}>
+          Ansh Bhardwaj
+        </motion.p>
+        <motion.h1 className="hero-title" variants={itemVariants}>
           <span className="hero-title-line">
             <span className="highlight hero-type-text">{displayText}</span>
             <span className="hero-cursor" aria-hidden="true"></span>
           </span>
         </motion.h1>
 
-        <motion.p 
-          className="hero-subtitle"
-          variants={itemVariants}
-        >
-          Orchestrating large-scale workflows, automating CI/CD pipelines, and building GenAI-driven solutions for enterprise reliability
+        <motion.p className="hero-subtitle" variants={itemVariants}>
+          Building scalable data platforms, workflow orchestration systems, and GenAI-powered enterprise automation.
         </motion.p>
 
-        <motion.div 
-          className="hero-buttons"
-          variants={itemVariants}
-        >
-          <motion.button 
+        <motion.div className="hero-buttons" variants={itemVariants}>
+          <motion.button
             className="btn btn-primary"
             whileHover={{ scale: 1.05, boxShadow: '0 0 24px hsl(var(--accent-hue) 92% 68% / 0.45)' }}
             whileTap={{ scale: 0.95 }}
             onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
           >
-            View Accomplishments
+            View Projects
           </motion.button>
-          <motion.button 
+          <motion.button
             className="btn btn-secondary"
             whileHover={{ scale: 1.05, boxShadow: '0 0 24px hsl(var(--accent-2-hue) 88% 72% / 0.35)' }}
             whileTap={{ scale: 0.95 }}
             onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
           >
-            Let's Connect
+            Let&apos;s Connect
           </motion.button>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="scroll-indicator"
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}
           variants={itemVariants}
         >
-          <div className="mouse">
-            <span className="wheel"></span>
-          </div>
+          <div className="mouse"><span className="wheel"></span></div>
           <span className="text">Scroll to explore</span>
         </motion.div>
       </div>
 
-      {/* Floating Elements */}
-      <motion.div 
+      <motion.div
         className="floating-element element-1"
-        animate={{ 
-          y: [-20, 20, -20],
-          x: [-10, 10, -10],
-          rotate: [0, 360, 0]
-        }}
+        animate={{ y: [-20, 20, -20], x: [-10, 10, -10], rotate: [0, 360, 0] }}
         transition={{ repeat: Infinity, duration: 8 }}
       >
-        ⚙️
+        AI
       </motion.div>
-
-      <motion.div 
+      <motion.div
         className="floating-element element-2"
-        animate={{ 
-          y: [20, -20, 20],
-          x: [10, -10, 10],
-          rotate: [360, 0, 360]
-        }}
+        animate={{ y: [20, -20, 20], x: [10, -10, 10], rotate: [360, 0, 360] }}
         transition={{ repeat: Infinity, duration: 10 }}
       >
-        🤖
+        DAG
       </motion.div>
-
-      <motion.div 
+      <motion.div
         className="floating-element element-3"
-        animate={{ 
-          y: [-15, 15, -15],
-          rotate: [0, 180, 360]
-        }}
+        animate={{ y: [-15, 15, -15], rotate: [0, 180, 360] }}
         transition={{ repeat: Infinity, duration: 7 }}
       >
-        📊
+        SQL
       </motion.div>
     </motion.section>
   )

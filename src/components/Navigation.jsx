@@ -1,27 +1,18 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import './Navigation.css'
-import { useState } from 'react'
+
+const navItems = ['Home', 'About', 'Experience', 'Projects', 'Skills', 'Credentials', 'Contact']
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
 
-  const navItems = ['Home', 'About', 'Projects', 'Skills', 'Contact']
-
   return (
-    <motion.nav 
-      className="nav"
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.8 }}
-    >
+    <motion.nav className="nav" initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.8 }}>
       <div className="nav-container">
-        <motion.div 
-          className="logo"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
+        <motion.a className="logo" href="#home" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
           <span>Ansh Bhardwaj</span>
-        </motion.div>
+        </motion.a>
 
         <div className={`nav-items ${isOpen ? 'active' : ''}`}>
           {navItems.map((item, index) => (
@@ -32,10 +23,7 @@ export default function Navigation() {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              whileHover={{ 
-                color: 'var(--accent)',
-                textShadow: '0 0 12px hsl(var(--accent-hue) 92% 68% / 0.45)'
-              }}
+              whileHover={{ color: 'var(--accent)', textShadow: '0 0 12px hsl(var(--accent-hue) 92% 68% / 0.45)' }}
               onClick={() => setIsOpen(false)}
             >
               {item}
@@ -43,8 +31,11 @@ export default function Navigation() {
           ))}
         </div>
 
-        <motion.button 
+        <motion.button
           className="menu-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded={isOpen}
           onClick={() => setIsOpen(!isOpen)}
           whileTap={{ scale: 0.95 }}
         >

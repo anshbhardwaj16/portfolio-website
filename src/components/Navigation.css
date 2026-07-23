@@ -26,11 +26,12 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .nav-items {
   display: flex;
-  gap: 2rem;
+  gap: 1.25rem;
   list-style: none;
 }
 
@@ -74,6 +75,24 @@
   transition: all 0.3s ease;
 }
 
+@media (max-width: 1050px) and (min-width: 769px) {
+  .nav-container {
+    padding: 0 1.25rem;
+  }
+
+  .logo {
+    font-size: 1.45rem;
+  }
+
+  .nav-items {
+    gap: 0.85rem;
+  }
+
+  .nav-item {
+    font-size: 0.88rem;
+  }
+}
+
 @media (max-width: 768px) {
   .menu-toggle {
     display: flex;
@@ -94,7 +113,7 @@
   }
 
   .nav-items.active {
-    max-height: 300px;
+    max-height: 520px;
   }
 
   .nav-item {
