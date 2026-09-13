@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Ansh Bhardwaj — Platform, Data &amp; GenAI Engineer</title>
+<title>Ansh Bhardwaj — Data Engineer | Airflow Platform &amp; GenAI</title>
 <meta name="description" content="Ansh Bhardwaj builds data platforms and AI agents that run — and heal — themselves. 800+ production Airflow DAGs, GenAI auto-healing pipelines, and autonomous engineering systems." />
 <meta name="theme-color" content="#080B14" />
 <meta property="og:type" content="website" />
@@ -139,7 +139,7 @@
   .edge.lit{stroke:rgba(53,214,230,.5);}
   .edge.flow{stroke:var(--cyan);filter:drop-shadow(0 0 3px rgba(53,214,230,.6));}
   .node rect{fill:var(--bg-2);stroke:var(--line-2);stroke-width:1.4;transition:stroke .3s ease,fill .3s ease;}
-  .node text{font-family:var(--mono);font-size:12.5px;fill:var(--tx-dim);transition:fill .3s ease;dominant-baseline:middle;text-anchor:middle;}
+  .node text{font-family:var(--mono);font-size:13.0px;fill:var(--tx-dim);transition:fill .3s ease;dominant-baseline:middle;text-anchor:middle;}
   .node .sd{fill:var(--tx-faint);transition:fill .3s ease;}
   .node.queued rect{stroke:var(--line-2);}
   .node.running rect{stroke:var(--run);fill:#171a20;}
@@ -497,14 +497,14 @@
         </div>
         <div class="metric reveal">
           <div class="stat-num"><span class="num" data-count="20">0</span><span class="suf">%</span></div>
-          <div class="stat-lbl">Lower MTTR &amp; manual effort</div>
+          <div class="stat-lbl">Lower MTTR</div>
         </div>
         <div class="metric reveal">
-          <div class="stat-num"><span class="num" data-count="50">0</span><span class="suf">+</span></div>
+          <div class="stat-num"><span class="num" data-count="250">0</span><span class="suf">+</span></div>
           <div class="stat-lbl">Engineering hours reclaimed / month</div>
         </div>
         <div class="metric reveal">
-          <div class="stat-num"><span class="num" data-count="2.5">0</span><span class="suf">+</span></div>
+          <div class="stat-num"><span class="num" data-count="3.0">0</span><span class="suf">+</span></div>
           <div class="stat-lbl">Years running platforms in production</div>
         </div>
       </div>
@@ -536,7 +536,7 @@
           </ul>
           <div class="proj-metrics">
             <div class="pm"><span class="v">↓ 20%</span><span class="k">Mean time to recovery</span></div>
-            <div class="pm"><span class="v">50+</span><span class="k">Hours saved / month</span></div>
+            <div class="pm"><span class="v">250+</span><span class="k">Hours saved / month</span></div>
           </div>
           <div class="stack">
             <span class="chip">Apache Airflow</span><span class="chip">Python</span><span class="chip">Copilot Studio</span><span class="chip">Power Automate</span><span class="chip">REST APIs</span><span class="chip">ServiceNow</span><span class="chip">LLMs</span>
@@ -601,6 +601,44 @@
           </div>
         </div>
       </article>
+
+      <!-- Project 3 -->
+      <article class="proj reveal">
+        <div class="proj-text">
+          <p class="proj-kick">Agentic AI · RAG · Local-First</p>
+          <h3>AI Research Agent — Local-First Agentic RAG System</h3>
+          <p class="tagline">A private research workflow that decides when to search the local knowledge base and when to use the live web.</p>
+          <ul class="pts">
+            <li>Built a fully local RAG system using <b>Ollama</b> inference, sentence-transformers embeddings, and <b>ChromaDB</b> with zero API cost.</li>
+            <li>Implemented multi-format ingestion and <b>incremental indexing</b> for a continuously growing private knowledge base.</li>
+            <li>Orchestrated a typed <b>4-node LangGraph</b> state machine: researcher → analyst → critic → writer.</li>
+            <li>Added a tool-calling agent that chooses per query between the <b>private index and live web</b>.</li>
+            <li>Served the system through <b>FastAPI</b> with SSE/NDJSON token streaming, cached model clients, per-node output budgets, and context clipping.</li>
+          </ul>
+          <div class="stack">
+            <span class="chip">Python</span><span class="chip">LangChain</span><span class="chip">LangGraph</span><span class="chip">Ollama</span><span class="chip">ChromaDB</span><span class="chip">FastAPI</span><span class="chip">RAG</span>
+          </div>
+        </div>
+        <div class="proj-media">
+          <div class="schematic">
+            <svg viewBox="0 0 300 286" role="img" aria-label="Local-first agentic RAG: ingest, retrieve, research, analyze and write">
+              <defs>
+                <marker id="ar1" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M1 1 L7 4 L1 7 z" fill="rgba(53,214,230,.75)"/></marker>
+              </defs>
+              <path class="sedge" d="M150 46 V63" marker-end="url(#ar1)"/>
+              <path class="sedge" d="M150 102 V119" marker-end="url(#ar1)"/>
+              <path class="sedge" d="M150 158 V175" marker-end="url(#ar1)"/>
+              <path class="sedge" d="M150 214 V231" marker-end="url(#ar1)"/>
+              <g class="snode hl"><rect x="70" y="12" width="160" height="34" rx="9"/><text x="150" y="30">ingest · index</text></g>
+              <g class="snode"><rect x="70" y="68" width="160" height="34" rx="9"/><text x="150" y="86">retrieve · route</text></g>
+              <g class="snode"><rect x="70" y="124" width="160" height="34" rx="9"/><text x="150" y="142">research · analyze</text></g>
+              <g class="snode heal"><rect x="70" y="180" width="160" height="34" rx="9"/><text x="150" y="198">critic</text></g>
+              <g class="snode done"><rect x="70" y="236" width="160" height="34" rx="9"/><text x="150" y="254">write · stream ✓</text></g>
+            </svg>
+            <div class="sch-cap">// local-first RAG — index → retrieve → reason → critique → write</div>
+          </div>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -618,15 +656,15 @@
           <div class="xtime">Sep 2023 — <span class="now">Present</span></div>
           <div class="xbody">
             <span class="xdot"></span>
-            <p class="xrole">Data Engineer — Management &amp; Governance Analyst</p>
+            <p class="xrole">Data Engineer</p>
             <p class="xorg">Accenture Solutions Pvt. Ltd.</p>
             <p class="xloc">Noida, India</p>
             <ul class="pts">
-              <li>Orchestrated and governed approximately <b>800 production Apache Airflow DAGs</b>, keeping large-scale enterprise data workflows reliable.</li>
-              <li>Built reusable <b>AutoDAG</b> templates to standardize pipeline creation and speed up onboarding.</li>
-              <li>Automated Selenium test execution with <b>Docker</b> and <b>GitHub Actions</b>, streamlining CI/CD validation.</li>
-              <li>Shipped a GenAI <b>Auto-Healing Framework</b> for Airflow using Copilot Studio and Power Automate.</li>
-              <li>Cut manual operational effort by <b>20%</b> — reclaiming <b>50+ engineering hours a month</b>.</li>
+              <li>Own execution reliability for approximately <b>800 production Apache Airflow DAGs</b>, covering scheduling, dependency design, failure triage, and SLA adherence.</li>
+              <li>Built Airflow monitoring and observability tooling in <b>Python</b> over the REST API and metadata database to surface DAG health, failure patterns, and run-duration trends.</li>
+              <li>Re-architected monitoring onto the <b>Airflow 3 REST API</b> when direct metadata access was removed, preserving coverage across a breaking upgrade.</li>
+              <li>Authored reusable <b>AutoDAG</b> templates and developed SQL-driven workflows plus CI/CD automation with Docker, Selenium, and GitHub Actions.</li>
+              <li>Built a GenAI <b>Auto-Healing Framework</b> using LLMs, integrated with ServiceNow and Power Automate, cutting <b>MTTR by 20%</b> and saving <b>250+ engineering hours/month</b>.</li>
             </ul>
           </div>
         </div>
@@ -646,10 +684,10 @@
       </div>
       <div class="cap-grid">
         <div class="cap reveal"><h4>Programming</h4><div class="chips"><span class="chip">Python</span><span class="chip">SQL</span></div></div>
-        <div class="cap reveal"><h4>Data Engineering</h4><div class="chips"><span class="chip">Apache Airflow</span><span class="chip">Workflow Orchestration</span><span class="chip">Pipeline Management</span><span class="chip">DAG Governance</span><span class="chip">Databricks</span></div></div>
-        <div class="cap reveal"><h4>DevOps</h4><div class="chips"><span class="chip">Docker</span><span class="chip">Git</span><span class="chip">GitHub Actions</span><span class="chip">CI/CD</span><span class="chip">REST APIs</span><span class="chip">Power Automate</span></div></div>
-        <div class="cap reveal"><h4>GenAI</h4><div class="chips"><span class="chip">Agentic AI</span><span class="chip">Multi-LLM</span><span class="chip">Copilot Studio</span><span class="chip">Prompt Engineering</span><span class="chip">RAG</span><span class="chip">Vector Embeddings</span><span class="chip">Semantic Search</span></div></div>
-        <div class="cap reveal"><h4>Tools</h4><div class="chips"><span class="chip">Jira &amp; Confluence</span><span class="chip">GitHub</span><span class="chip">ServiceNow</span></div></div>
+        <div class="cap reveal"><h4>Data Engineering</h4><div class="chips"><span class="chip">Apache Airflow 2 &amp; 3</span><span class="chip">Airflow REST API</span><span class="chip">Metadata DB</span><span class="chip">Workflow Orchestration</span><span class="chip">DAG Design</span><span class="chip">Pipeline Monitoring</span><span class="chip">Incremental Processing</span><span class="chip">Data Governance</span></div></div>
+        <div class="cap reveal"><h4>GenAI</h4><div class="chips"><span class="chip">Agentic AI</span><span class="chip">RAG</span><span class="chip">Multi-Agent Orchestration</span><span class="chip">Tool-Calling Agents</span><span class="chip">Vector Embeddings</span><span class="chip">Semantic Search</span><span class="chip">Prompt Engineering</span><span class="chip">Multi-LLM Architecture</span></div></div>
+        <div class="cap reveal"><h4>AI &amp; Platform Tooling</h4><div class="chips"><span class="chip">Claude</span><span class="chip">OpenAI</span><span class="chip">Gemini</span><span class="chip">LangChain</span><span class="chip">LangGraph</span><span class="chip">Ollama</span><span class="chip">ChromaDB</span><span class="chip">FastAPI</span><span class="chip">Copilot Studio</span></div></div>
+        <div class="cap reveal"><h4>DevOps &amp; Enterprise</h4><div class="chips"><span class="chip">Docker</span><span class="chip">Git</span><span class="chip">GitHub Actions</span><span class="chip">CI/CD</span><span class="chip">REST APIs</span><span class="chip">Jira</span><span class="chip">ServiceNow</span><span class="chip">Power Automate</span></div></div>
       </div>
     </div>
   </section>
@@ -665,26 +703,26 @@
       </div>
       <div class="about-grid">
         <div class="bio reveal">
-          <p>I'm a platform and data engineer at <b>Accenture</b>, where I keep hundreds of production data pipelines running at scale — and build the automation that takes people out of the loop when things break.</p>
-          <p>Lately that's meant leaning hard into <b>GenAI</b>: Airflow pipelines that diagnose and heal themselves, and agentic systems that plan, write, review, and ship code end to end. I care about infrastructure that's reliable, observable, and <b>boring to operate</b> — because that's what lets teams move fast.</p>
-          <p class="now-line"><b>Currently</b> — scaling self-healing orchestration and agentic engineering platforms.</p>
+          <p>I'm a <b>Data Engineer at Accenture</b> focused on the reliability of large-scale data platforms, with hands-on depth in Airflow orchestration, monitoring, SQL, and CI/CD automation.</p>
+          <p>Alongside platform engineering, I build <b>GenAI and agentic AI systems</b>: self-healing Airflow workflows, multi-LLM engineering platforms, reusable AI agents, and local-first RAG systems.</p>
+          <p class="now-line"><b>Currently</b> — building reliable data platforms and production-grade GenAI automation.</p>
         </div>
         <div class="cred reveal">
           <div class="panel">
             <h5>Certifications</h5>
             <ul>
-              <li>Microsoft Certified: DP-203<span>Data Engineering on Azure</span></li>
+              <li>Microsoft DP-203<span>Azure Data Engineering</span></li>
+              <li>Anthropic Claude Certified Architect — Professional</li>
+              <li>Anthropic Claude Certified (CCA-F)</li>
               <li>Astronomer — Airflow Fundamentals</li>
               <li>Astronomer — DAG Monitoring &amp; Auditing</li>
-              <li>Databricks — Generative AI Engineer Associate</li>
               <li>Microsoft — GitHub GHE-300</li>
-              <li>Anthropic CCA-F</li>
             </ul>
           </div>
           <div class="panel">
             <h5>Awards</h5>
             <ul>
-              <li>ACE Award, Accenture<span>May 2026</span></li>
+              <li>ACE Award, Accenture<span>2026</span></li>
               <li>Mc Star Award<span>Client Recognition</span></li>
               <li>SOS Award<span>Client Recognition</span></li>
             </ul>
