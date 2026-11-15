@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import './Skills.css'
 
 const skillCategories = [
-  { category: 'Programming', skills: ['Python', 'SQL'], icon: '01' },
+  { category: 'Programming & Big Data', skills: ['Python', 'SQL', 'PySpark', 'Apache Spark'], icon: '01' },
   {
     category: 'Data Engineering',
     skills: ['Apache Airflow', 'Workflow Orchestration', 'Data Pipeline Management', 'DAG Monitoring & Governance', 'Databricks'],
